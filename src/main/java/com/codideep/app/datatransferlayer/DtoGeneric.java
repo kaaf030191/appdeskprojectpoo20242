@@ -12,8 +12,8 @@ import java.util.Date;
  */
 public abstract class DtoGeneric {
 
-    public Date createdAt;
-    public Date updatedAt;
+    private Date createdAt;
+    private Date updatedAt;
 
     public Date getCreatedAt() {
         return createdAt;

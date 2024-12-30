@@ -10,9 +10,9 @@ package com.codideep.app.datatransferlayer;
  */
 public class DtoFavoriteLanguaje extends DtoGeneric{
 
-    public String idFavoriteLanguaje;
-    public String idPerson;
-    public String idLanguaje;
+    private String idFavoriteLanguaje;
+    private String idPerson;
+    private String idLanguaje;
 
     public String getIdFavoriteLanguaje() {
         return idFavoriteLanguaje;

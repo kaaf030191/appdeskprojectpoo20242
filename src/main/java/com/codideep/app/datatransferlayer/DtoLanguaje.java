@@ -10,8 +10,8 @@ package com.codideep.app.datatransferlayer;
  */
 public class DtoLanguaje extends DtoGeneric{
 
-    public String idLanguaje;
-    public String name;
+    private String idLanguaje;
+    private String name;
 
     public String getIdLanguaje() {
         return idLanguaje;

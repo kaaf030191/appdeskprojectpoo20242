@@ -12,12 +12,12 @@ import java.util.Date;
  */
 public class DtoPerson extends DtoGeneric{
 
-    public String idPerson;
-    public String firstName;
-    public String surName;
-    public String dni;
-    public Date birthDate;
-    public boolean gender;
+    private String idPerson;
+    private String firstName;
+    private String surName;
+    private String dni;
+    private Date birthDate;
+    private boolean gender;
 
     public String getIdPerson() {
         return idPerson;
