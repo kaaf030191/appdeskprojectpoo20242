@@ -12,7 +12,7 @@ import com.codideep.app.businesslayer.BusinessPerson;
  */
 public class FrmPersonInsert extends javax.swing.JInternalFrame {
 
-    private BusinessPerson businessPerson;
+    private final BusinessPerson businessPerson;
 
     /**
      * Creates new form FrmPersonInsert

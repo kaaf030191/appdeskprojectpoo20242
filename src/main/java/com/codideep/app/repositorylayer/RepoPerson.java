@@ -5,11 +5,12 @@
 package com.codideep.app.repositorylayer;
 
 import com.codideep.app.datatransferlayer.DtoPerson;
+import java.util.List;
 
 /**
  *
  * @author KAAF0
  */
 public interface RepoPerson extends RepoGeneric<DtoPerson>{
-    
+    List<DtoPerson> getAll();
 }

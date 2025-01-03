@@ -4,6 +4,7 @@
  */
 package com.codideep.app.presentationlayer;
 
+import com.codideep.app.presentationlayer.person.FrmPersonGetAll;
 import com.codideep.app.presentationlayer.person.FrmPersonInsert;
 
 /**
@@ -34,6 +35,7 @@ public class MdiPrincipal extends javax.swing.JFrame {
         exitMenuItem = new javax.swing.JMenuItem();
         menuPerson = new javax.swing.JMenu();
         personInsertMenuItem = new javax.swing.JMenuItem();
+        personGetAllMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +60,14 @@ public class MdiPrincipal extends javax.swing.JFrame {
             }
         });
         menuPerson.add(personInsertMenuItem);
+
+        personGetAllMenuItem.setText("Listar");
+        personGetAllMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personGetAllMenuItemActionPerformed(evt);
+            }
+        });
+        menuPerson.add(personGetAllMenuItem);
 
         menuBar.add(menuPerson);
 
@@ -89,12 +99,21 @@ public class MdiPrincipal extends javax.swing.JFrame {
         frmPersonInsert.setVisible(true);
     }//GEN-LAST:event_personInsertMenuItemActionPerformed
 
+    private void personGetAllMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personGetAllMenuItemActionPerformed
+        FrmPersonGetAll frmPersonGetAll = new FrmPersonGetAll();
+        
+        desktopPane.add(frmPersonGetAll);
+        
+        frmPersonGetAll.setVisible(true);
+    }//GEN-LAST:event_personGetAllMenuItemActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuPerson;
+    private javax.swing.JMenuItem personGetAllMenuItem;
     private javax.swing.JMenuItem personInsertMenuItem;
     // End of variables declaration//GEN-END:variables
 

@@ -4,17 +4,53 @@
  */
 package com.codideep.app.presentationlayer.person;
 
+import com.codideep.app.businesslayer.BusinessPerson;
+import com.codideep.app.datatransferlayer.DtoPerson;
+import javax.swing.table.DefaultTableModel;
+import java.util.List;
+
 /**
  *
  * @author KAAF0
  */
 public class FrmPersonGetAll extends javax.swing.JInternalFrame {
 
+    private final BusinessPerson businessPerson;
+    private final DefaultTableModel dtmPerson;
+
     /**
      * Creates new form FrmPersonGetAll
      */
     public FrmPersonGetAll() {
+        businessPerson = new BusinessPerson();
+
         initComponents();
+
+        dtmPerson = new DefaultTableModel();
+
+        dtmPerson.addColumn("DNI");
+        dtmPerson.addColumn("Nombre");
+        dtmPerson.addColumn("Apellido");
+        dtmPerson.addColumn("Fecha de nacimiento");
+        dtmPerson.addColumn("Género");
+        dtmPerson.addColumn("Registro");
+        dtmPerson.addColumn("Actualización");
+
+        tablePerson.setModel(dtmPerson);
+
+        List<DtoPerson> listDtoPerson = businessPerson.getAll();
+
+        for (DtoPerson item : listDtoPerson) {
+            dtmPerson.addRow(new Object[] {
+                item.getDni(),
+                item.getFirstName(),
+                item.getSurName(),
+                item.getBirthDate(),
+                item.isGender() ? "Masculino" : "Femenino",
+                item.getCreatedAt(),
+                item.getUpdatedAt()
+            });
+        }
     }
 
     /**
@@ -26,15 +62,34 @@ public class FrmPersonGetAll extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablePerson = new javax.swing.JTable();
+
+        tablePerson.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(tablePerson);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         pack();
@@ -42,5 +97,7 @@ public class FrmPersonGetAll extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tablePerson;
     // End of variables declaration//GEN-END:variables
 }
